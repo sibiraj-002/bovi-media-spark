@@ -31,7 +31,7 @@ const Layout = () => {
       <header className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? 'py-4 bg-white/95 shadow-md backdrop-blur-sm' : 'py-6 bg-transparent'
       }`}>
-        <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
           <NavLink to="/" className="flex items-center">
             <h1 className="text-2xl font-bold text-bovi-blue">BOVI<span className="text-bovi-accent">MEDIA</span></h1>
           </NavLink>
@@ -63,7 +63,7 @@ const Layout = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden absolute top-full w-full bg-white border-t shadow-lg py-4 animate-fade-in">
-            <div className="container mx-auto px-4 flex flex-col space-y-4">
+            <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col space-y-4">
               <NavLink to="/" className={navLinkClass}>Home</NavLink>
               <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
               <NavLink to="/services" className={navLinkClass}>Services</NavLink>
