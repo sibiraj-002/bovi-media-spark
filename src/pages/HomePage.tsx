@@ -43,7 +43,7 @@ const HomePage = () => {
       {/* Value Proposition Section with Animations */}
       <section className="section-padding bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">Our Value Proposition</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 ">Our Value Proposition</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             <div className="text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 transform opacity-0 translate-y-4 [animation-play-state:paused] [.section-visible_&]:animate-[fadeInUp_0.5s_ease-out_0.2s_forwards]">
@@ -88,7 +88,7 @@ const HomePage = () => {
       {/* Media Solutions Showcase with Animation */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl font-bold text-center mb-12 opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">Media Solutions</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Media Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white opacity-0 [animation-play-state:paused] [.section-visible_&]:animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
               <AspectRatio ratio={16/9}>
@@ -138,20 +138,20 @@ const HomePage = () => {
       {/* Bottom Line Section with Animation */}
       <section className="section-padding bg-bovi-blue text-white text-center">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6 opacity-0 animate-[fadeIn_1s_ease-out_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">Bottom Line</h2>
-          <p className="text-2xl font-light max-w-2xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">When we say, we do.</p>
+          <h2 className="text-3xl font-bold mb-6 ">Bottom Line</h2>
+          <p className="text-2xl font-light max-w-2xl mx-auto ">When we say, we do.</p>
         </div>
       </section>
 
       {/* Media Channels Section with Animation */}
-      <section className="section-padding">
+      <section className="md:py-20">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl font-bold text-center mb-12 opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">Media Channels We Cover</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 ">Media Channels We Cover</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
             {['Print', 'Radio', 'Television', 'Digital', 'Social Media'].map((channel, index) => (
               <div 
                 key={channel} 
-                className="p-6 border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 opacity-0 [animation-play-state:paused] [.section-visible_&]:animate-[fadeIn_0.5s_ease-out_forwards]" 
+                className="p-6 border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-gray-50 " 
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
                 <p className="font-semibold text-lg">{channel}</p>
@@ -171,10 +171,10 @@ const HomePage = () => {
       </section>
 
       {/* Pan India Presence with Animation */}
-      <section className="section-padding bg-gray-50">
-        <div className="container mx-auto text-center px-6 md:px-12 lg:px-24">
-          <h2 className="text-3xl font-bold mb-6 opacity-0 animate-[fadeIn_0.8s_ease-out_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">Pan India Presence</h2>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards] [animation-play-state:paused] [.section-visible_&]:animate-running">
+      <section className="md:pb-20 bg-gray-50">
+        <div className="container mx-auto text-center ">
+          <h2 className="text-3xl font-bold mb-6 ">Pan India Presence</h2>
+          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto ">
             We currently operate through our Bangalore, Delhi, Mumbai and Goa locations 
             providing a pan India presence to our clients.
           </p>
@@ -183,7 +183,7 @@ const HomePage = () => {
             {['Bangalore', 'Delhi', 'Mumbai', 'Goa'].map((location, index) => (
               <div 
                 key={location} 
-                className="p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 opacity-0 [animation-play-state:paused] [.section-visible_&]:animate-[fadeIn_0.5s_ease-out_forwards]"
+                className="p-4 border rounded-lg bg-white shadow-sm hover:shadow-md  "
                 style={{ animationDelay: `${0.15 * (index + 1)}s` }}
               >
                 <p className="font-medium">{location}</p>

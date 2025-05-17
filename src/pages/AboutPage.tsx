@@ -10,7 +10,7 @@ const AboutPage = () => {
       <section className="relative">
         <div className="w-full h-64 md:h-80 overflow-hidden">
           <AspectRatio ratio={16/5} className="bg-gradient-to-r from-bovi-blue to-bovi-lightBlue opacity-80">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-[url('/home_banner.png')] bg-cover bg-center mix-blend-overlay"></div>
           </AspectRatio>
         </div>
         <div className="container mx-auto px-6 md:px-12 lg:px-24 relative -mt-24 md:-mt-32">
