@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import { Menu, X } from 'lucide-react';
@@ -9,13 +9,43 @@ const Layout = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   
+  // Refs for section animation
+  const sectionsRef = useRef<HTMLElement[]>([]);
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    
+    // Set up intersection observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Get all sections to observe
+    const sections = document.querySelectorAll('section');
+    sectionsRef.current = Array.from(sections) as HTMLElement[];
+    
+    // Observe each section
+    sectionsRef.current.forEach(section => {
+      observer.observe(section);
+    });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (sectionsRef.current.length) {
+        sectionsRef.current.forEach(section => {
+          observer.unobserve(section);
+        });
+      }
+    };
+  }, [location]);
 
   useEffect(() => {
     setIsMenuOpen(false);
