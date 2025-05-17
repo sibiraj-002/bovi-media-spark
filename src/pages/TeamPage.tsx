@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const TeamPage = () => {
   const teamMembers = [
@@ -47,10 +49,15 @@ const TeamPage = () => {
 
   return (
     <>
-      {/* Team Hero Section */}
-      <section className="section-padding hero-gradient">
-        <div className="container mx-auto">
-          <div className="max-w-3xl">
+      {/* Team Hero Section with Banner */}
+      <section className="relative">
+        <div className="w-full h-64 md:h-80 overflow-hidden">
+          <AspectRatio ratio={16/5} className="bg-gradient-to-r from-bovi-blue to-bovi-lightBlue opacity-90">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+          </AspectRatio>
+        </div>
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 relative -mt-24 md:-mt-32">
+          <div className="max-w-3xl bg-white p-6 md:p-8 rounded-lg shadow-md">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h1>
             <p className="text-xl text-gray-700">
               Meet the experienced leaders behind BOVI Media, with over 70 years of combined experience in the media industry.
@@ -67,8 +74,22 @@ const TeamPage = () => {
               <div key={member.name} className="max-w-5xl mx-auto">
                 <div className="flex flex-col lg:flex-row gap-10 items-start">
                   <div className="lg:w-1/3">
-                    <div className="aspect-square rounded-xl bg-gradient-to-br from-bovi-blue to-bovi-lightBlue flex items-center justify-center text-white">
-                      <h2 className="text-4xl font-bold">{member.name.split(" ")[0]}<br />{member.name.split(" ")[1]}</h2>
+                    <div className="rounded-xl overflow-hidden">
+                      {index === 0 ? (
+                        <Avatar className="h-64 w-64 md:h-80 md:w-80 mx-auto">
+                          <AvatarImage src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt={member.name} />
+                          <AvatarFallback className="text-4xl bg-gradient-to-br from-bovi-blue to-bovi-lightBlue text-white">
+                            {member.name.split(" ").map(n => n[0]).join("")}
+                          </AvatarFallback>
+                        </Avatar>
+                      ) : (
+                        <Avatar className="h-64 w-64 md:h-80 md:w-80 mx-auto">
+                          <AvatarImage src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt={member.name} />
+                          <AvatarFallback className="text-4xl bg-gradient-to-br from-bovi-blue to-bovi-lightBlue text-white">
+                            {member.name.split(" ").map(n => n[0]).join("")}
+                          </AvatarFallback>
+                        </Avatar>
+                      )}
                     </div>
                   </div>
                   
@@ -127,10 +148,12 @@ const TeamPage = () => {
       </section>
 
       {/* Experience Banner */}
-      <section className="section-padding bg-bovi-blue text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Combined Experience of Over 70 Years</h2>
-          <p className="text-xl max-w-3xl mx-auto">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-bovi-blue opacity-90"></div>
+        <div className="container mx-auto text-center relative z-10">
+          <h2 className="text-3xl font-bold mb-6 text-white">Combined Experience of Over 70 Years</h2>
+          <p className="text-xl max-w-3xl mx-auto text-white">
             With our extensive experience in the media industry, Bovi Media will be able to help you 
             prioritise your spends, plan sustainable media solutions and flawlessly execute them.
           </p>
